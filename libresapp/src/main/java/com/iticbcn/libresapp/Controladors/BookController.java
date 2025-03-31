@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.iticbcn.libresapp.Model.Llibre;
 import com.iticbcn.libresapp.Model.Usuaris;
-import com.iticbcn.libresapp.Repositoris.RepoLlibre;
+import com.iticbcn.libresapp.Repositoris.BookRepository;
 
-@Controller
+@Controller 
 @SessionAttributes("users")//Aquesta anotació permet que la variable users es pugui compartir entre diferents pàgines
 public class BookController {
 
@@ -40,12 +40,12 @@ public class BookController {
         }        
     }
 
-    @ModelAttribute("users")//Aquesta anotació permet que la variable users es pugui compartir entre diferents pàgines
+    /*@ModelAttribute("users")//Aquesta anotació permet que la variable users es pugui compartir entre diferents pàgines
     public Usuaris getDefaultUser() {
         return new Usuaris(); 
-    }
+    }*/
 
-        @GetMapping("/index")//Per si necessitem tornar a la pàgina d'inici
+    @GetMapping("/index")//Per si necessitem tornar a la pàgina d'inici
     public String index(@ModelAttribute("users") Usuaris users, Model model) {
 
             return "index";
