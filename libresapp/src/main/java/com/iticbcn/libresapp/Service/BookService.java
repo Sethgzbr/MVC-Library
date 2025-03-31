@@ -8,6 +8,6 @@ public interface BookService {
     Set<Llibre> findAllLlibres();
     Llibre findByTitol(String titol);
     Set<Llibre> findByTitolAndEditorial(String titol, String editorial);
-    Optional<Llibre> findByIdLlibre(Long id);
+    Optional<Llibre> findByIdLlibre(int id);
     boolean validateIsbnFormat(String isbn);
 }

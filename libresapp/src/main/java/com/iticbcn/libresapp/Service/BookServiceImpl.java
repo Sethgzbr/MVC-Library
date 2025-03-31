@@ -30,7 +30,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public Optional<Llibre> findByIdLlibre(Long id) {
+    public Optional<Llibre> findByIdLlibre(int id) {
         return (Optional <Llibre>) bookRepository.findByIdLlibre(id);
     }
 

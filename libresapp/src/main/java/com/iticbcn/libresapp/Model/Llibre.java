@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "llibres")
+@Table(name = "books")
 public class Llibre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,8 @@ public class Llibre {
     private String titol;
     private String autor;
     private String editorial;
-    private String datapublicacio;
+    @Column(name = "data_edicio")
+    private LocalDate datapublicacio;
     private String tematica;
 
     @Column(unique = true, nullable = false)
@@ -24,7 +25,7 @@ public class Llibre {
 
     public Llibre() {}
 
-    public Llibre(int idLlibre, String titol, String autor, String editorial, String datapublicacio, String tematica, String isbn) {
+    public Llibre(int idLlibre, String titol, String autor, String editorial, LocalDate datapublicacio, String tematica, String isbn) {
         this.idLlibre = idLlibre;
         this.titol = titol;
         this.autor = autor;
@@ -66,11 +67,11 @@ public class Llibre {
         this.editorial = editorial;
     }
 
-    public String getDatapublicacio() {
+    public LocalDate getDatapublicacio() {
         return datapublicacio;
     }
 
-    public void setDatapublicacio(String datapublicacio) {
+    public void setDatapublicacio(LocalDate datapublicacio) {
         this.datapublicacio = datapublicacio;
     }
 
